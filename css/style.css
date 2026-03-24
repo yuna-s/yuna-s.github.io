@@ -6,8 +6,10 @@
 
 :root {
   --bg:        #fdf6f0;
+  --bg-soft:   #fdf6f0;
   --surface:   #fff9f5;
   --rose:      #e8836a;
+  --accent:    #e8836a;
   --rose-light:#f5b8a8;
   --peach:     #fce8dd;
   --text:      #3d2c28;

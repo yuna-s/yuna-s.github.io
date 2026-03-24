@@ -8,6 +8,67 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .post-screenshot {
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .post-screenshot img {
+      width: 100%;
+      display: block;
+    }
+    .post-screenshot figcaption {
+      background: var(--bg-soft);
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .ai-disclosure {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      background: #fff8f0;
+      border: 1px solid #f5d9c0;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      color: #8a6a50;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .setup-steps {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0;
+    }
+    .setup-steps li {
+      counter-increment: step;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .setup-steps li::before {
+      content: counter(step);
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      width: 1.6rem;
+      height: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -38,70 +99,224 @@
           </a>
         </div>
         <h1>
-          <span class="lang-en"><!-- EN title coming soon --></span>
+          <span class="lang-en">How I Built This Blog with Claude in About an Hour</span>
           <span class="lang-ja">Claudeと一緒にこのブログを作った話</span>
         </h1>
         <p class="post-lead">
-          <span class="lang-en"><!-- EN lead coming soon --></span>
-          <span class="lang-ja">Claude を試してみたくて、自分のブログ作成をお題にしてみました。約1時間で完成してしまったので、使ったプロンプトと実装した機能をまとめておきます。</span>
+          <span class="lang-en">I wanted to try out Claude Code, so I used it to build a blog I'd been putting off for ages. It took about an hour — here's what happened, with copy-pasteable prompts.</span>
+          <span class="lang-ja">Claude Code を試してみたくて、ずっと後回しにしていた「自分のブログ」をお題にしてみました。約1時間で完成してしまったので、使ったプロンプトと実装した機能をまとめておきます。</span>
         </p>
       </header>
 
       <div class="post-body">
 
+        <div class="ai-disclosure">
+          <span class="lang-en">🤖 This article was written in collaboration with Claude (AI). The content has been reviewed and edited by the author, but please read with that context in mind.</span>
+          <span class="lang-ja">🤖 この記事は AI（Claude）と共同で執筆しています。内容は筆者が確認・編集していますが、その点をご理解のうえお読みください。</span>
+        </div>
+
         <!-- EN -->
         <div class="lang-en">
-          <p><em>English version coming soon.</em></p>
+
+          <h2>Background</h2>
+          <p>AI-powered coding and autonomous agents have been getting a lot of attention lately. I wanted to quickly test how far I could get just by giving Claude instructions in plain language — so I used building my own blog homepage as the test case.</p>
+          <p>This article documents the prompts I used and the features that came out of it, for both developers and non-technical readers who are curious about AI tools.</p>
+
+          <h2>Setup: From Zero to First Prompt</h2>
+          <p>Getting started was simpler than I expected. Here's the full setup flow:</p>
+          <ol class="setup-steps">
+            <li>
+              <div>
+                <strong>Install Claude</strong><br>
+                Download the Claude desktop app from <a href="https://claude.ai/download" target="_blank">claude.ai/download</a> and sign in.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Create a working directory</strong><br>
+                Make a folder anywhere on your machine — this is where Claude will create and manage your files.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Tell Claude what you want</strong><br>
+                Just say it in plain language. Claude handled everything: <code>git init</code>, creating the GitHub repository, configuring GitHub Pages, and pushing the code — all without me running a single command myself.
+              </div>
+            </li>
+          </ol>
+          <p>No terminal experience required. The entire setup, from empty folder to live website, was driven by conversation.</p>
+
+          <h2>What Got Built</h2>
+          <p>After about an hour of back-and-forth, <a href="https://yuna-s.github.io" target="_blank">yuna-s.github.io</a> was live. Here's what's included:</p>
+          <ul>
+            <li>Static blog hosted on <strong>GitHub Pages</strong> (free)</li>
+            <li>Tag-based filtering — header tags, filter buttons, and sidebar all stay in sync</li>
+            <li>Real-time search across titles, excerpts, and post body keywords</li>
+            <li>English / Japanese language toggle, saved to browser storage</li>
+            <li>Sidebar with search, tag cloud, recent posts, and stats</li>
+            <li>Clean file structure: <code>css/</code>, <code>posts/</code>, <code>js/</code>, <code>assets/</code></li>
+            <li>Working rules and knowledge docs for ongoing collaboration with Claude</li>
+          </ul>
+          <figure class="post-screenshot">
+            <img src="../assets/images/claude-code-screenshot.png" alt="Claude Code interface alongside the live blog preview" />
+            <figcaption>Claude Code (left) building the site in real time — browser preview (right) updating as we go.</figcaption>
+          </figure>
+
+          <h2>Prompts Used (Copy-Paste Ready)</h2>
+          <p>All instructions were in plain conversational language — English or Japanese both worked fine. The very first message was:</p>
+          <blockquote>create my homepage which is hosting on github</blockquote>
+          <p>Then I added context:</p>
+          <blockquote>my name is yuna nishikino. blog page. About me and blogs, user name is yuna-s, style is warm and cute but clear</blockquote>
+          <p>From there, features were added one by one through conversation:</p>
+          <ul>
+            <li><code>"フォルダーを作成してpushして"</code> → organized file structure + deployed to GitHub</li>
+            <li><code>"タグでフィルタリングする機能を付けて。右にも便利な機能つけて"</code> → tag filter + sidebar</li>
+            <li><code>"英語と日本語対応にして"</code> → EN/JA language toggle</li>
+            <li><code>"記事も日本語対応するようにして"</code> → bilingual post pages</li>
+            <li><code>"本文の単語を検索しても出てこない"</code> → Claude diagnosed and fixed the search bug</li>
+          </ul>
+
+          <h2>Things I Noticed</h2>
+
+          <h3>Short prompts go further than you'd expect</h3>
+          <p>"Warm and cute but clear" was enough to produce a consistent color palette, font choices, and layout. You don't need to spec everything in advance.</p>
+
+          <h3>Debugging is included</h3>
+          <p>When search wasn't working, Claude traced the problem on its own — a <code>file://</code> protocol issue causing scripts to stop — and fixed it with a <code>try-catch</code>. No need to investigate errors myself.</p>
+
+          <h3>It works around constraints thoughtfully</h3>
+          <p>A static site can't do full-text search across separate files out of the box. Claude's solution: embed keywords as a <code>data-content</code> attribute on each post card, populated when the post is added. Practical and maintainable.</p>
+
+          <h2>Tips: Ask Claude to Review as a Persona</h2>
+          <p>One thing I found surprisingly useful: asking Claude to review content <em>as a specific perspective</em>. You just describe the viewpoint you want, and Claude gives feedback from that angle. I used this to improve this very article.</p>
+
+          <p>That said — AI-generated feedback is a starting point, not a final answer. Always read through the suggestions yourself and decide what actually fits your intent. The human review step matters.</p>
+
+          <h3>Example personas</h3>
+          <ul>
+            <li><strong>Engineer perspective</strong> — focused on technical accuracy and completeness</li>
+            <li><strong>Non-technical / business perspective</strong> — cares about clarity and practical value</li>
+            <li><strong>Editor perspective</strong> — checks tone, consistency, and readability</li>
+          </ul>
+
+          <p>The prompt is simple:</p>
+          <blockquote>エンジニア視点と、技術に詳しくないビジネス担当者の視点でレビューして、より良い記事にアップデートして。最後に編集者として口調や内容を校正してもらって</blockquote>
+
+          <h3>Example feedback (condensed)</h3>
+          <p>Below is an example of the kind of feedback Claude might return. Actual responses will vary — use them as prompts for your own judgment, not as definitive corrections.</p>
+          <p><strong>Engineer:</strong> "The <code>file://</code> protocol issue needs more context — readers may not understand why that causes scripts to fail. Also worth mentioning that <code>try-catch</code> is a standard JavaScript error-handling pattern."</p>
+          <p><strong>Business perspective:</strong> "What is GitHub Pages exactly? I'd want one sentence explaining it before jumping into features. Also, 'static site' isn't obvious to non-developers."</p>
+          <p><strong>Editor:</strong> "The tone shifts between casual and formal mid-article. The closing paragraph is a bit flat — end on something more personal and inviting."</p>
+
+          <p>Running multiple personas in parallel takes a few seconds and surfaces angles you might not have considered. Definitely worth adding to your workflow.</p>
+
+          <h2>Wrapping Up</h2>
+          <p>I came in half-expecting the results to be rough around the edges. What I got was a site with real design quality and working features — in about an hour of conversation. On my own, this would have taken at least several days.</p>
+          <p>No special tools or technical expertise required. Just describe what you want in your own words and you'll get surprisingly far. AI has genuinely come a long way. If there's something you've been putting off, it might be worth giving it a try — though one thing to keep in mind: always review what the AI has done before moving forward. The human check still matters. If you spot any mistakes or have questions, feel free to reach out. Thanks for reading! 🌸</p>
+
         </div>
 
         <!-- JA -->
         <div class="lang-ja">
 
           <h2>はじめに</h2>
-          <p>Anthropic が提供する AI コーディングアシスタント「<strong>Claude Code</strong>」を試してみたくて、以前からやりたかった「自分のブログ用ホームページを作る」をお題にしてみることにしました。</p>
+          <p>最近は AI を使ったコーディングや自律的に動作するエージェントが話題ですね。AI に言葉で指示するだけでどこまでできるか簡単に試したくて、Claude に「自分のブログ用ホームページを作る」をお題に検証してみることにしました。</p>
           <p>この記事では、実際に使ったプロンプトと完成した機能を記録しています。技術的な経験がある方にも、AI に興味はあるけど詳しくない方にも、参考にしていただければ幸いです。</p>
+
+          <h2>事前準備：最初の一言を打つまで</h2>
+          <p>セットアップは思ったよりずっとシンプルでした。以下が全体の流れです。</p>
+          <ol class="setup-steps">
+            <li>
+              <div>
+                <strong>Claude アプリをインストールする</strong><br>
+                <a href="https://claude.ai/download" target="_blank">claude.ai/download</a> からデスクトップアプリをダウンロードして、サインインするだけです。
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>作業用フォルダを作成する</strong><br>
+                PC 上の好きな場所にフォルダを1つ作ります。Claude はそのフォルダの中でファイルを作成・管理してくれます。
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>やりたいことを話しかけるだけ</strong><br>
+                あとは日本語で伝えるだけ。<code>git init</code> の実行、GitHub リポジトリの作成、GitHub Pages の設定、コードの push まで、自分でコマンドを一切打つことなく Claude がすべて対応してくれました。
+              </div>
+            </li>
+          </ol>
+          <p>ターミナルの知識は不要です。空のフォルダから公開済みのウェブサイトまで、すべて会話だけで完結しました。</p>
 
           <h2>完成したもの</h2>
           <p>約1時間の会話で、このサイト（<a href="https://yuna-s.github.io" target="_blank">yuna-s.github.io</a>）が完成しました。主な機能は以下のとおりです。</p>
           <ul>
-            <li>GitHub Pages（無料でウェブサイトを公開できる GitHub のサービス）でホスティングされる静的ブログ</li>
+            <li><strong>GitHub Pages</strong>（無料）でホスティングされる静的ブログ</li>
             <li>タグによる記事フィルタリング（ページ上部・フィルターボタン・サイドバーが連動）</li>
             <li>タイトル・抜粋・本文キーワードを対象にしたリアルタイム検索</li>
             <li>英語 / 日本語の切り替え（選択した言語はブラウザに記憶される）</li>
             <li>サイドバー：検索・タグ一覧・最近の投稿・記事数などの統計</li>
+            <li>整理されたフォルダ構成：<code>css/</code>・<code>posts/</code>・<code>js/</code>・<code>assets/</code></li>
             <li>Claude との作業ルールやナレッジをまとめたドキュメント</li>
           </ul>
-          <p>コードは <code>css/</code>・<code>posts/</code>・<code>js/</code> に整理されており、新しい記事は HTML ファイルを1つ追加するだけで公開できます。</p>
+          <figure class="post-screenshot">
+            <img src="../assets/images/claude-code-screenshot.png" alt="Claude Code の画面とブログのライブプレビュー" />
+            <figcaption>左：Claude Code で会話しながらサイトを構築中 ／ 右：リアルタイムで更新されるブラウザプレビュー</figcaption>
+          </figure>
 
           <h2>使ったプロンプト（コピペ用）</h2>
-          <p>指示はすべて会話形式で、英語・日本語どちらでも構いません。最初の一言はとてもシンプルでした。</p>
+          <p>指示はすべて会話形式で、英語・日本語どちらでも問題ありませんでした。最初の一言はとてもシンプルでした。</p>
           <blockquote>create my homepage which is hosting on github</blockquote>
           <p>その後、名前・用途・スタイルをあわせて伝えました。</p>
           <blockquote>my name is yuna nishikino. blog page. About me and blogs, user name is yuna-s, style is warm and cute but clear</blockquote>
           <p>以降は会話しながら機能を追加していきました。主なリクエストは以下のとおりです。</p>
           <ul>
-            <li><code>フォルダーを作成してpushして</code> → ファイル構成の整理・GitHub への公開</li>
-            <li><code>タグでフィルタリングする機能を付けて。右にも便利な機能つけて</code> → タグフィルター＋サイドバー追加</li>
-            <li><code>英語と日本語対応にして</code> → 言語切り替え機能の実装</li>
-            <li><code>記事も日本語対応するようにして</code> → 記事ページのバイリンガル化</li>
+            <li><code>「フォルダーを作成してpushして」</code> → ファイル構成の整理 ＋ GitHub への公開</li>
+            <li><code>「タグでフィルタリングする機能を付けて。右にも便利な機能つけて」</code> → タグフィルター ＋ サイドバー追加</li>
+            <li><code>「英語と日本語対応にして」</code> → 言語切り替え機能の実装</li>
+            <li><code>「記事も日本語対応するようにして」</code> → 記事ページのバイリンガル化</li>
+            <li><code>「本文の単語を検索しても出てこない」</code> → Claude が原因を特定して修正</li>
           </ul>
 
-          <h2>気づいたこと・つまずいた点</h2>
+          <h2>やってみて気づいたこと</h2>
 
           <h3>短い指示でも意図をくんでくれる</h3>
           <p>「warm and cute but clear」というスタイル指定だけで、カラーパレットからフォント選定まで一貫したデザインが出てきました。細かい仕様を事前に決めなくても、方向性さえ伝えればある程度動いてくれます。</p>
 
           <h3>不具合の特定・修正も自分でやってくれる</h3>
-          <p>最初、検索機能がうまく動いていませんでした。Claude Code がコードを解析して原因を特定し、修正まで行ってくれました。自分でエラーの原因を調べる必要がなかったのは、大変助かりました。</p>
-          <p><strong>技術的な補足：</strong>原因は、ファイルをブラウザで直接開く場合（<code>file://</code> プロトコル）に一部のブラウザ API が制限され、スクリプト全体が止まっていたことでした。<code>try-catch</code> を追加して対応しています。</p>
+          <p>最初、検索機能がうまく動いていませんでした。Claude がコードを解析して原因を特定し、修正まで行ってくれました。<br>
+          <strong>技術的な補足：</strong>原因は、ファイルを直接ブラウザで開く場合（<code>file://</code> プロトコル）に一部のブラウザ API が制限され、スクリプト全体が止まっていたことでした。<code>try-catch</code> を追加して対応しています。</p>
 
           <h3>制約の中での工夫も一緒に考えてくれる</h3>
-          <p>サーバーを持たない静的サイトでは、記事本文の全文検索を実現するのが難しいという制約があります。今回は、各記事カードにキーワードをあらかじめ埋め込む（記事追加時に Claude と一緒に設定）という方法で対応しました。「できないから諦める」ではなく、現実的な落とし所を一緒に探してくれる点がとても良かったです。</p>
+          <p>サーバーを持たない静的サイトでは、記事本文の全文検索を実現するのが難しいという制約があります。今回は、各記事カードにキーワードをあらかじめ埋め込む（<code>data-content</code> 属性）という方法で対応しました。「できないから諦める」ではなく、現実的な落とし所を一緒に探してくれるのが良かったです。</p>
+
+          <h2>Tips：ペルソナにレビューさせる</h2>
+          <p>試してみて意外と便利だったのが、「特定の視点でレビューして」とお願いする方法です。想定する読者や役割を伝えるだけで、その視点からのフィードバックをもらえます。この記事自体もこの方法でブラッシュアップしました。</p>
+
+          <p>ただし、AI のフィードバックはあくまで参考情報です。提案をそのまま採用するのではなく、内容が自分の意図に合っているかどうかを必ず自分で確認してください。人間によるレビューは欠かせません。</p>
+
+          <h3>ペルソナの例</h3>
+          <ul>
+            <li><strong>エンジニア視点</strong> — 技術的な正確さや説明の網羅性を重視</li>
+            <li><strong>非エンジニア・ビジネス視点</strong> — わかりやすさと実用的な価値を重視</li>
+            <li><strong>編集者視点</strong> — 口調の一貫性や読みやすさを確認</li>
+          </ul>
+
+          <p>プロンプトの例です。</p>
+          <blockquote>エンジニア視点と、技術に詳しくないビジネス担当者の視点でレビューして、より良い記事にアップデートして。最後に編集者として口調や内容を校正してもらって</blockquote>
+
+          <h3>フィードバックの例（抜粋）</h3>
+          <p>以下は Claude が返してくれるフィードバックのイメージです。実際の回答は毎回異なります。提案はあくまで判断の参考として活用してください。</p>
+          <p><strong>エンジニア：</strong>「<code>file://</code> プロトコルでスクリプトが止まる理由の説明が不足している。<code>try-catch</code> が標準的なエラー処理パターンであることにも触れてほしい。」</p>
+          <p><strong>ビジネス視点：</strong>「GitHub Pages が何なのか、一言説明がないと最初で詰まる。"静的サイト" という言葉も非エンジニアには伝わりにくい。」</p>
+          <p><strong>編集者：</strong>「記事の途中で口調がカジュアルとフォーマルの間で揺れている。締めの段落がやや平坦なので、もう少し個人的なトーンで締めると良い。」</p>
+
+          <p>複数の視点を同時に依頼できるので、数秒で多角的なフィードバックが揃います。記事に限らず、仕様書や提案資料のチェックにも活用できます。</p>
 
           <h2>まとめ</h2>
-          <p>「AI に頼むと雑なものができる」という先入観がありましたが、デザインも機能も想像以上のものができました。約1時間の会話で、自分だけでは何日もかかりそうな作業が完了しました。</p>
-          <p>大がかりなツールや専門知識は不要です。やりたいことを言葉で伝えるだけで、かなりのところまで進められます。プログラマーでなくても、AI に興味がある方なら十分試せると思います。</p>
-          <p>次は、このブログで記事を書き続けながら、Claude と一緒にどこまで改善できるか試していきたいと思っています。同じことを試してみたい方は、ぜひやってみてください。誤りや補足があればお気軽にご連絡ください。🌸</p>
+          <p>「AI に頼んでもクオリティは低い」という先入観がありましたが、デザインも機能も想像以上のものができました。約1時間の会話で、自分だけでは少なくとも数日はかかりそうな作業が完了しました。</p>
+          <p>大がかりなツールや専門知識は不要です。やりたいことを言葉で伝えるだけで、かなりのところまで進められます。AIの進化はすごいですね。ずっと後回しにしてきたものがある方は、ぜひ一度試してみるといいかもしれません。しかし、人間がAIの実行内容を必ず確認した上で進めることが重要ですね。
+            誤りや補足があればお気軽にご連絡ください。ここまで読んでくださってありがとうございました🌸</p>
+
         </div>
 
       </div>
