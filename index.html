@@ -36,76 +36,253 @@
 
   <div class="divider">· · ·</div>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2 class="section-title">🌷 About me</h2>
-    <div class="about-card">
-      <p>Hi, I'm <strong>Yuna</strong> — nice to meet you! I'm a curious person who enjoys writing, making things, and finding beauty in small everyday moments.</p>
-      <p>This blog is my little corner of the internet where I share thoughts on <strong>tech, books, creative hobbies</strong>, and whatever is currently on my mind. No strict schedule — just genuine writing when I have something to say.</p>
-      <p>When I'm not at a keyboard, you might find me browsing bookstores, trying new cafes, or getting lost in a new hobby. ☕</p>
-      <div class="about-links">
-        <a class="btn btn-primary" href="https://github.com/yuna-s" target="_blank" rel="noopener">
-          ⭐ GitHub
-        </a>
-        <a class="btn btn-outline" href="mailto:hello@example.com">
-          ✉️ Say hello
-        </a>
+  <!-- MAIN + SIDEBAR -->
+  <div class="content-wrapper">
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <h2 class="section-title">🌷 About me</h2>
+        <div class="about-card">
+          <p>Hi, I'm <strong>Yuna</strong> — nice to meet you! I'm a curious person who enjoys writing, making things, and finding beauty in small everyday moments.</p>
+          <p>This blog is my little corner of the internet where I share thoughts on <strong>tech, books, creative hobbies</strong>, and whatever is currently on my mind. No strict schedule — just genuine writing when I have something to say.</p>
+          <p>When I'm not at a keyboard, you might find me browsing bookstores, trying new cafes, or getting lost in a new hobby. ☕</p>
+          <div class="about-links">
+            <a class="btn btn-primary" href="https://github.com/yuna-s" target="_blank" rel="noopener">⭐ GitHub</a>
+            <a class="btn btn-outline" href="mailto:hello@example.com">✉️ Say hello</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOG -->
+      <section id="blog">
+        <h2 class="section-title">📖 Blog</h2>
+
+        <!-- TAG FILTER -->
+        <div class="tag-filters" role="group" aria-label="Filter by tag">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="daily life">🌿 daily life</button>
+          <button class="filter-btn" data-filter="tech">💻 tech</button>
+          <button class="filter-btn" data-filter="books">📚 books</button>
+          <button class="filter-btn" data-filter="writing">✍️ writing</button>
+        </div>
+
+        <!-- NO RESULTS -->
+        <p class="no-results" hidden>No posts found. Try a different tag or search term.</p>
+
+        <!-- BLOG GRID -->
+        <div class="blog-grid">
+
+          <a class="post-card" href="posts/2026-03-20-spring.html" data-tags="daily life">
+            <div class="post-meta">
+              <span class="post-date">March 20, 2026</span>
+              <span class="post-tag" data-tag="daily life">🌿 daily life</span>
+            </div>
+            <div class="post-title">Spring is here — and so is the urge to start over</div>
+            <div class="post-excerpt">Cherry blossoms always remind me that beginnings don't need to be big. Sometimes a new season is enough.</div>
+            <div class="post-read">Read more →</div>
+          </a>
+
+          <a class="post-card" href="posts/2026-03-10-github-pages.html" data-tags="tech">
+            <div class="post-meta">
+              <span class="post-date">March 10, 2026</span>
+              <span class="post-tag" data-tag="tech">💻 tech</span>
+            </div>
+            <div class="post-title">What I learned building my first GitHub Pages site</div>
+            <div class="post-excerpt">Turns out putting something on the internet is both easier and scarier than I expected. Here's how it went.</div>
+            <div class="post-read">Read more →</div>
+          </a>
+
+          <a class="post-card" href="posts/2026-02-28-books-and-time.html" data-tags="books">
+            <div class="post-meta">
+              <span class="post-date">February 28, 2026</span>
+              <span class="post-tag" data-tag="books">📚 books</span>
+            </div>
+            <div class="post-title">Five books that changed how I think about time</div>
+            <div class="post-excerpt">Not productivity books. Not self-help. Just five stories that quietly shifted something in me.</div>
+            <div class="post-read">Read more →</div>
+          </a>
+
+          <a class="post-card" href="posts/2026-02-14-writing-in-public.html" data-tags="writing">
+            <div class="post-meta">
+              <span class="post-date">February 14, 2026</span>
+              <span class="post-tag" data-tag="writing">✍️ writing</span>
+            </div>
+            <div class="post-title">Why I started writing in public (and why I almost didn't)</div>
+            <div class="post-excerpt">The voice in my head that said "no one will care" was loud. I wrote anyway. This is about that.</div>
+            <div class="post-read">Read more →</div>
+          </a>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- SEARCH -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">🔍 Search</h3>
+        <div class="search-box">
+          <input type="search" id="search-input" placeholder="Search posts..." aria-label="Search posts" />
+          <span class="search-icon">⌕</span>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- BLOG -->
-  <section id="blog">
-    <h2 class="section-title">📖 Blog</h2>
-    <div class="blog-grid">
-
-      <a class="post-card" href="posts/2026-03-20-spring.html">
-        <div class="post-meta">
-          <span class="post-date">March 20, 2026</span>
-          <span class="post-tag">daily life</span>
+      <!-- TAGS -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">🏷️ Tags</h3>
+        <div class="tag-cloud">
+          <button class="cloud-tag active" data-filter="all">All <span class="tag-count">4</span></button>
+          <button class="cloud-tag" data-filter="daily life">🌿 daily life <span class="tag-count">1</span></button>
+          <button class="cloud-tag" data-filter="tech">💻 tech <span class="tag-count">1</span></button>
+          <button class="cloud-tag" data-filter="books">📚 books <span class="tag-count">1</span></button>
+          <button class="cloud-tag" data-filter="writing">✍️ writing <span class="tag-count">1</span></button>
         </div>
-        <div class="post-title">Spring is here — and so is the urge to start over</div>
-        <div class="post-excerpt">Cherry blossoms always remind me that beginnings don't need to be big. Sometimes a new season is enough.</div>
-        <div class="post-read">Read more →</div>
-      </a>
+      </div>
 
-      <a class="post-card" href="posts/2026-03-10-github-pages.html">
-        <div class="post-meta">
-          <span class="post-date">March 10, 2026</span>
-          <span class="post-tag">tech</span>
+      <!-- RECENT POSTS -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">📌 Recent Posts</h3>
+        <ul class="recent-posts">
+          <li>
+            <a href="posts/2026-03-20-spring.html">
+              <span class="recent-tag">daily life</span>
+              <span class="recent-title">Spring is here — and so is the urge to start over</span>
+              <span class="recent-date">Mar 20</span>
+            </a>
+          </li>
+          <li>
+            <a href="posts/2026-03-10-github-pages.html">
+              <span class="recent-tag">tech</span>
+              <span class="recent-title">What I learned building my first GitHub Pages site</span>
+              <span class="recent-date">Mar 10</span>
+            </a>
+          </li>
+          <li>
+            <a href="posts/2026-02-28-books-and-time.html">
+              <span class="recent-tag">books</span>
+              <span class="recent-title">Five books that changed how I think about time</span>
+              <span class="recent-date">Feb 28</span>
+            </a>
+          </li>
+          <li>
+            <a href="posts/2026-02-14-writing-in-public.html">
+              <span class="recent-tag">writing</span>
+              <span class="recent-title">Why I started writing in public</span>
+              <span class="recent-date">Feb 14</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- STATS -->
+      <div class="sidebar-widget widget-stats">
+        <h3 class="widget-title">✨ Stats</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-num">4</span>
+            <span class="stat-label">Posts</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">4</span>
+            <span class="stat-label">Tags</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">2026</span>
+            <span class="stat-label">Since</span>
+          </div>
         </div>
-        <div class="post-title">What I learned building my first GitHub Pages site</div>
-        <div class="post-excerpt">Turns out putting something on the internet is both easier and scarier than I expected. Here's how it went.</div>
-        <div class="post-read">Read more →</div>
-      </a>
+      </div>
 
-      <a class="post-card" href="posts/2026-02-28-books-and-time.html">
-        <div class="post-meta">
-          <span class="post-date">February 28, 2026</span>
-          <span class="post-tag">books</span>
-        </div>
-        <div class="post-title">Five books that changed how I think about time</div>
-        <div class="post-excerpt">Not productivity books. Not self-help. Just five stories that quietly shifted something in me.</div>
-        <div class="post-read">Read more →</div>
-      </a>
+    </aside>
 
-      <a class="post-card" href="posts/2026-02-14-writing-in-public.html">
-        <div class="post-meta">
-          <span class="post-date">February 14, 2026</span>
-          <span class="post-tag">writing</span>
-        </div>
-        <div class="post-title">Why I started writing in public (and why I almost didn't)</div>
-        <div class="post-excerpt">The voice in my head that said "no one will care" was loud. I wrote anyway. This is about that.</div>
-        <div class="post-read">Read more →</div>
-      </a>
-
-    </div>
-  </section>
+  </div><!-- /.content-wrapper -->
 
   <!-- FOOTER -->
   <footer>
     <p>Made with care by <a href="https://github.com/yuna-s">Yuna Nishikino</a> · <a href="https://github.com/yuna-s/yuna-s.github.io">View source</a></p>
   </footer>
+
+  <script>
+    // ── State ──
+    let activeTag = 'all';
+    let searchQuery = '';
+
+    const cards     = Array.from(document.querySelectorAll('.post-card'));
+    const filterBtns  = document.querySelectorAll('.filter-btn');
+    const cloudBtns   = document.querySelectorAll('.cloud-tag');
+    const searchInput = document.getElementById('search-input');
+    const noResults   = document.querySelector('.no-results');
+
+    // ── Filter logic ──
+    function applyFilters() {
+      let visible = 0;
+      cards.forEach(card => {
+        const tags  = card.dataset.tags || '';
+        const title = card.querySelector('.post-title').textContent.toLowerCase();
+        const excerpt = card.querySelector('.post-excerpt').textContent.toLowerCase();
+        const q = searchQuery.toLowerCase();
+
+        const tagMatch  = activeTag === 'all' || tags.split(',').map(t => t.trim()).includes(activeTag);
+        const textMatch = q === '' || title.includes(q) || excerpt.includes(q);
+
+        const show = tagMatch && textMatch;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      noResults.hidden = visible > 0;
+    }
+
+    // ── Sync both sets of tag buttons ──
+    function setTag(tag) {
+      activeTag = tag;
+
+      filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === tag));
+      cloudBtns.forEach(b  => b.classList.toggle('active', b.dataset.filter === tag));
+
+      // Update URL without reload (fails silently on file://)
+      try {
+        const url = new URL(window.location);
+        if (tag === 'all') url.searchParams.delete('tag');
+        else url.searchParams.set('tag', tag);
+        history.replaceState(null, '', url);
+      } catch (_) {}
+
+      applyFilters();
+    }
+
+    // ── Button listeners ──
+    filterBtns.forEach(btn => btn.addEventListener('click', () => setTag(btn.dataset.filter)));
+    cloudBtns.forEach(btn  => btn.addEventListener('click', () => {
+      setTag(btn.dataset.filter);
+      document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
+    }));
+
+    // ── Search listener ──
+    searchInput.addEventListener('input', e => {
+      searchQuery = e.target.value;
+      applyFilters();
+    });
+
+    // ── Tag links on post cards (stop nav, apply filter) ──
+    document.querySelectorAll('.post-tag[data-tag]').forEach(span => {
+      span.style.cursor = 'pointer';
+      span.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        setTag(span.dataset.tag);
+        document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // ── Read ?tag= from URL on load ──
+    const urlTag = new URLSearchParams(window.location.search).get('tag');
+    if (urlTag) setTag(urlTag);
+  </script>
 
 </body>
 </html>
