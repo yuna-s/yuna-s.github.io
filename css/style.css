@@ -126,6 +126,19 @@ nav {
   border: 1px solid var(--rose-light);
 }
 
+.tag-link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.tag-link:hover,
+.tag-link.active {
+  background: var(--rose);
+  color: #fff;
+  border-color: var(--rose);
+}
+
 /* ── DIVIDER ── */
 .divider {
   text-align: center;
@@ -183,6 +196,23 @@ section {
 
 .about-card p { color: var(--muted); font-size: 0.97rem; }
 .about-card p strong { color: var(--text); }
+
+.about-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+}
+
+.skill-tag {
+  background: var(--peach);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
 
 .about-links {
   display: flex;
