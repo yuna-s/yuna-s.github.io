@@ -140,7 +140,7 @@
             <li>
               <div>
                 <strong>Tell Claude what you want</strong><br>
-                Just say it in plain language. Claude handled everything: <code>git init</code>, creating the GitHub repository, configuring GitHub Pages, and pushing the code — all without me running a single command myself.
+                Just say it in plain language. Claude walked me through each step: running <code>git init</code>, configuring GitHub Pages, and pushing the code. I created the GitHub repository myself — Claude explained exactly what to do and in what order.
               </div>
             </li>
           </ol>
@@ -186,30 +186,6 @@
 
           <h3>It works around constraints thoughtfully</h3>
           <p>A static site can't do full-text search across separate files out of the box. Claude's solution: embed keywords as a <code>data-content</code> attribute on each post card, populated when the post is added. Practical and maintainable.</p>
-
-          <h2>Tips: Ask Claude to Review as a Persona</h2>
-          <p>One thing I found surprisingly useful: asking Claude to review content <em>as a specific perspective</em>. You just describe the viewpoint you want, and Claude gives feedback from that angle. I used this to improve this very article.</p>
-
-          <p>That said — AI-generated feedback is a starting point, not a final answer. Always read through the suggestions yourself and decide what actually fits your intent. The human review step matters.</p>
-
-          <h3>Example personas</h3>
-          <ul>
-            <li><strong>Engineer perspective</strong> — focused on technical accuracy and completeness</li>
-            <li><strong>Non-technical / business perspective</strong> — cares about clarity and practical value</li>
-            <li><strong>Editor perspective</strong> — checks tone, consistency, and readability</li>
-          </ul>
-
-          <p>The prompt is simple:</p>
-          <blockquote>エンジニア視点と、技術に詳しくないビジネス担当者の視点でレビューして、より良い記事にアップデートして。最後に編集者として口調や内容を校正してもらって</blockquote>
-
-          <h3>Example feedback (condensed)</h3>
-          <p>Below is an example of the kind of feedback Claude might return. Actual responses will vary — use them as prompts for your own judgment, not as definitive corrections.</p>
-          <p><strong>Engineer:</strong> "The <code>file://</code> protocol issue needs more context — readers may not understand why that causes scripts to fail. Also worth mentioning that <code>try-catch</code> is a standard JavaScript error-handling pattern."</p>
-          <p><strong>Business perspective:</strong> "What is GitHub Pages exactly? I'd want one sentence explaining it before jumping into features. Also, 'static site' isn't obvious to non-developers."</p>
-          <p><strong>Editor:</strong> "The tone shifts between casual and formal mid-article. The closing paragraph is a bit flat — end on something more personal and inviting."</p>
-
-          <p>Running multiple personas in parallel takes a few seconds and surfaces angles you might not have considered. Definitely worth adding to your workflow.</p>
-
           <h2>Wrapping Up</h2>
           <p>I came in half-expecting the results to be rough around the edges. What I got was a site with real design quality and working features — in about an hour of conversation. On my own, this would have taken at least several days.</p>
           <p>No special tools or technical expertise required. Just describe what you want in your own words and you'll get surprisingly far. AI has genuinely come a long way. If there's something you've been putting off, it might be worth giving it a try — though one thing to keep in mind: always review what the AI has done before moving forward. The human check still matters. If you spot any mistakes or have questions, feel free to reach out. Thanks for reading! 🌸</p>
@@ -241,7 +217,7 @@
             <li>
               <div>
                 <strong>やりたいことを話しかけるだけ</strong><br>
-                あとは日本語で伝えるだけ。<code>git init</code> の実行、GitHub リポジトリの作成、GitHub Pages の設定、コードの push まで、自分でコマンドを一切打つことなく Claude がすべて対応してくれました。
+                あとは日本語で伝えるだけ。<code>git init</code> の実行、GitHub Pages の設定、コードの push は Claude が対応してくれました。GitHub リポジトリの作成は自分で行いましたが、手順は Claude が丁寧に教えてくれたので迷うことなく進められました。
               </div>
             </li>
           </ol>
@@ -288,29 +264,6 @@
 
           <h3>制約の中での工夫も一緒に考えてくれる</h3>
           <p>サーバーを持たない静的サイトでは、記事本文の全文検索を実現するのが難しいという制約があります。今回は、各記事カードにキーワードをあらかじめ埋め込む（<code>data-content</code> 属性）という方法で対応しました。「できないから諦める」ではなく、現実的な落とし所を一緒に探してくれるのが良かったです。</p>
-
-          <h2>Tips：ペルソナにレビューさせる</h2>
-          <p>試してみて意外と便利だったのが、「特定の視点でレビューして」とお願いする方法です。想定する読者や役割を伝えるだけで、その視点からのフィードバックをもらえます。この記事自体もこの方法でブラッシュアップしました。</p>
-
-          <p>ただし、AI のフィードバックはあくまで参考情報です。提案をそのまま採用するのではなく、内容が自分の意図に合っているかどうかを必ず自分で確認してください。人間によるレビューは欠かせません。</p>
-
-          <h3>ペルソナの例</h3>
-          <ul>
-            <li><strong>エンジニア視点</strong> — 技術的な正確さや説明の網羅性を重視</li>
-            <li><strong>非エンジニア・ビジネス視点</strong> — わかりやすさと実用的な価値を重視</li>
-            <li><strong>編集者視点</strong> — 口調の一貫性や読みやすさを確認</li>
-          </ul>
-
-          <p>プロンプトの例です。</p>
-          <blockquote>エンジニア視点と、技術に詳しくないビジネス担当者の視点でレビューして、より良い記事にアップデートして。最後に編集者として口調や内容を校正してもらって</blockquote>
-
-          <h3>フィードバックの例（抜粋）</h3>
-          <p>以下は Claude が返してくれるフィードバックのイメージです。実際の回答は毎回異なります。提案はあくまで判断の参考として活用してください。</p>
-          <p><strong>エンジニア：</strong>「<code>file://</code> プロトコルでスクリプトが止まる理由の説明が不足している。<code>try-catch</code> が標準的なエラー処理パターンであることにも触れてほしい。」</p>
-          <p><strong>ビジネス視点：</strong>「GitHub Pages が何なのか、一言説明がないと最初で詰まる。"静的サイト" という言葉も非エンジニアには伝わりにくい。」</p>
-          <p><strong>編集者：</strong>「記事の途中で口調がカジュアルとフォーマルの間で揺れている。締めの段落がやや平坦なので、もう少し個人的なトーンで締めると良い。」</p>
-
-          <p>複数の視点を同時に依頼できるので、数秒で多角的なフィードバックが揃います。記事に限らず、仕様書や提案資料のチェックにも活用できます。</p>
 
           <h2>まとめ</h2>
           <p>「AI に頼んでもクオリティは低い」という先入観がありましたが、デザインも機能も想像以上のものができました。約1時間の会話で、自分だけでは少なくとも数日はかかりそうな作業が完了しました。</p>
