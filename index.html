@@ -15,9 +15,14 @@
   <nav>
     <a class="nav-logo" href="index.html">yuna ✿</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#blog">Blog</a></li>
+      <li><a href="#about" data-i18n="nav-about">About</a></li>
+      <li><a href="#blog" data-i18n="nav-blog">Blog</a></li>
     </ul>
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+      <span class="lang-option" data-lang="en">EN</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-option" data-lang="ja">JA</span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -25,12 +30,12 @@
     <div class="avatar">🌸</div>
     <h1>Yuna Nishikino</h1>
     <p class="handle">@yuna-s</p>
-    <p>Writing about things I love, things I learn, and moments that matter.</p>
+    <p data-i18n="hero-tagline">Writing about things I love, things I learn, and moments that matter.</p>
     <div class="hero-tags">
-      <a class="tag tag-link" href="#blog" data-filter="writing">✍️ writing</a>
-      <a class="tag tag-link" href="#blog" data-filter="daily life">🌿 daily life</a>
-      <a class="tag tag-link" href="#blog" data-filter="tech">💻 tech</a>
-      <a class="tag tag-link" href="#blog" data-filter="books">📚 books</a>
+      <a class="tag tag-link" href="#blog" data-filter="writing" data-i18n="tag-writing">✍️ writing</a>
+      <a class="tag tag-link" href="#blog" data-filter="daily life" data-i18n="tag-daily">🌿 daily life</a>
+      <a class="tag tag-link" href="#blog" data-filter="tech" data-i18n="tag-tech">💻 tech</a>
+      <a class="tag tag-link" href="#blog" data-filter="books" data-i18n="tag-books">📚 books</a>
     </div>
   </header>
 
@@ -44,10 +49,10 @@
 
       <!-- ABOUT -->
       <section id="about">
-        <h2 class="section-title">🌷 About me</h2>
+        <h2 class="section-title" data-i18n="about-title">🌷 About me</h2>
         <div class="about-card">
-          <p>Hi, I'm <strong>Yuna</strong> — Software Engineer at <strong>Microsoft Japan</strong>, currently co-developing AI products with enterprise partners. I love bridging the gaps between technical depth, security, and human-centered UX. 🚀</p>
-          <p>Outside of work, I write here about things I'm learning, reading, and thinking about. No strict schedule — just honest writing when I have something to say. ☕</p>
+          <p data-i18n-html="about-p1">Hi, I'm <strong>Yuna</strong> — Software Engineer at <strong>Microsoft Japan</strong>, currently co-developing AI products with enterprise partners. I love bridging the gaps between technical depth, security, and human-centered UX. 🚀</p>
+          <p data-i18n-html="about-p2">Outside of work, I write here about things I'm learning, reading, and thinking about. No strict schedule — just honest writing when I have something to say. ☕</p>
           <div class="about-skills">
             <span class="skill-tag">☁️ Azure</span>
             <span class="skill-tag">🔐 IAM / Auth</span>
@@ -64,61 +69,65 @@
 
       <!-- BLOG -->
       <section id="blog">
-        <h2 class="section-title">📖 Blog</h2>
+        <h2 class="section-title" data-i18n="blog-title">📖 Blog</h2>
 
         <!-- TAG FILTER -->
-        <div class="tag-filters" role="group" aria-label="Filter by tag">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="daily life">🌿 daily life</button>
-          <button class="filter-btn" data-filter="tech">💻 tech</button>
-          <button class="filter-btn" data-filter="books">📚 books</button>
-          <button class="filter-btn" data-filter="writing">✍️ writing</button>
+        <div class="tag-filters" role="group">
+          <button class="filter-btn active" data-filter="all" data-i18n="filter-all">All</button>
+          <button class="filter-btn" data-filter="daily life" data-i18n="filter-daily">🌿 daily life</button>
+          <button class="filter-btn" data-filter="tech" data-i18n="filter-tech">💻 tech</button>
+          <button class="filter-btn" data-filter="books" data-i18n="filter-books">📚 books</button>
+          <button class="filter-btn" data-filter="writing" data-i18n="filter-writing">✍️ writing</button>
         </div>
 
         <!-- NO RESULTS -->
-        <p class="no-results" hidden>No posts found. Try a different tag or search term.</p>
+        <p class="no-results" hidden data-i18n="no-results">No posts found. Try a different tag or search term.</p>
 
         <!-- BLOG GRID -->
         <div class="blog-grid">
 
-          <a class="post-card" href="posts/2026-03-20-spring.html" data-tags="daily life" data-content="cherry blossoms spring season reset fresh start annual notebook warm light sakura beginning ordinary tuesday walk">
+          <a class="post-card" href="posts/2026-03-20-spring.html" data-tags="daily life"
+             data-content="cherry blossoms spring season reset fresh start annual notebook warm light sakura beginning ordinary tuesday walk 桜 春 季節 リセット 新しい始まり">
             <div class="post-meta">
-              <span class="post-date">March 20, 2026</span>
-              <span class="post-tag" data-tag="daily life">🌿 daily life</span>
+              <span class="post-date" data-i18n="date1">March 20, 2026</span>
+              <span class="post-tag" data-tag="daily life" data-i18n="tag-daily">🌿 daily life</span>
             </div>
-            <div class="post-title">Spring is here — and so is the urge to start over</div>
-            <div class="post-excerpt">Cherry blossoms always remind me that beginnings don't need to be big. Sometimes a new season is enough.</div>
-            <div class="post-read">Read more →</div>
+            <div class="post-title" data-i18n="post1-title">Spring is here — and so is the urge to start over</div>
+            <div class="post-excerpt" data-i18n="post1-excerpt">Cherry blossoms always remind me that beginnings don't need to be big. Sometimes a new season is enough.</div>
+            <div class="post-read" data-i18n="read-more">Read more →</div>
           </a>
 
-          <a class="post-card" href="posts/2026-03-10-github-pages.html" data-tags="tech" data-content="github pages html files push repo deploy static site index publish internet scary button commit simple files">
+          <a class="post-card" href="posts/2026-03-10-github-pages.html" data-tags="tech"
+             data-content="github pages html files push repo deploy static site index publish internet scary button commit simple files デプロイ 公開 静的サイト">
             <div class="post-meta">
-              <span class="post-date">March 10, 2026</span>
-              <span class="post-tag" data-tag="tech">💻 tech</span>
+              <span class="post-date" data-i18n="date2">March 10, 2026</span>
+              <span class="post-tag" data-tag="tech" data-i18n="tag-tech">💻 tech</span>
             </div>
-            <div class="post-title">What I learned building my first GitHub Pages site</div>
-            <div class="post-excerpt">Turns out putting something on the internet is both easier and scarier than I expected. Here's how it went.</div>
-            <div class="post-read">Read more →</div>
+            <div class="post-title" data-i18n="post2-title">What I learned building my first GitHub Pages site</div>
+            <div class="post-excerpt" data-i18n="post2-excerpt">Turns out putting something on the internet is both easier and scarier than I expected. Here's how it went.</div>
+            <div class="post-read" data-i18n="read-more">Read more →</div>
           </a>
 
-          <a class="post-card" href="posts/2026-02-28-books-and-time.html" data-tags="books" data-content="remains of the day ishiguro when breath becomes air kalanithi midnight library matt haig piranesi susanna clarke man called ove fredrik backman time meaningful regret calendar">
+          <a class="post-card" href="posts/2026-02-28-books-and-time.html" data-tags="books"
+             data-content="remains of the day ishiguro when breath becomes air kalanithi midnight library matt haig piranesi susanna clarke man called ove fredrik backman time meaningful regret calendar 時間 本 読書">
             <div class="post-meta">
-              <span class="post-date">February 28, 2026</span>
-              <span class="post-tag" data-tag="books">📚 books</span>
+              <span class="post-date" data-i18n="date3">February 28, 2026</span>
+              <span class="post-tag" data-tag="books" data-i18n="tag-books">📚 books</span>
             </div>
-            <div class="post-title">Five books that changed how I think about time</div>
-            <div class="post-excerpt">Not productivity books. Not self-help. Just five stories that quietly shifted something in me.</div>
-            <div class="post-read">Read more →</div>
+            <div class="post-title" data-i18n="post3-title">Five books that changed how I think about time</div>
+            <div class="post-excerpt" data-i18n="post3-excerpt">Not productivity books. Not self-help. Just five stories that quietly shifted something in me.</div>
+            <div class="post-read" data-i18n="read-more">Read more →</div>
           </a>
 
-          <a class="post-card" href="posts/2026-02-14-writing-in-public.html" data-tags="writing" data-content="journal private public blog honest expert voice no one cares ordinary person real less alone publish domain scary share">
+          <a class="post-card" href="posts/2026-02-14-writing-in-public.html" data-tags="writing"
+             data-content="journal private public blog honest expert voice no one cares ordinary person real less alone publish domain scary share 日記 公開 書く ブログ">
             <div class="post-meta">
-              <span class="post-date">February 14, 2026</span>
-              <span class="post-tag" data-tag="writing">✍️ writing</span>
+              <span class="post-date" data-i18n="date4">February 14, 2026</span>
+              <span class="post-tag" data-tag="writing" data-i18n="tag-writing">✍️ writing</span>
             </div>
-            <div class="post-title">Why I started writing in public (and why I almost didn't)</div>
-            <div class="post-excerpt">The voice in my head that said "no one will care" was loud. I wrote anyway. This is about that.</div>
-            <div class="post-read">Read more →</div>
+            <div class="post-title" data-i18n="post4-title">Why I started writing in public (and why I almost didn't)</div>
+            <div class="post-excerpt" data-i18n="post4-excerpt">The voice in my head that said "no one will care" was loud. I wrote anyway. This is about that.</div>
+            <div class="post-read" data-i18n="read-more">Read more →</div>
           </a>
 
         </div>
@@ -131,54 +140,54 @@
 
       <!-- SEARCH -->
       <div class="sidebar-widget">
-        <h3 class="widget-title">🔍 Search</h3>
+        <h3 class="widget-title" data-i18n="widget-search">🔍 Search</h3>
         <div class="search-box">
-          <input type="search" id="search-input" placeholder="Search posts..." aria-label="Search posts" />
+          <input type="search" id="search-input" placeholder="Search posts..." aria-label="Search posts" data-i18n-placeholder="search-placeholder" />
           <span class="search-icon">⌕</span>
         </div>
       </div>
 
       <!-- TAGS -->
       <div class="sidebar-widget">
-        <h3 class="widget-title">🏷️ Tags</h3>
+        <h3 class="widget-title" data-i18n="widget-tags">🏷️ Tags</h3>
         <div class="tag-cloud">
-          <button class="cloud-tag active" data-filter="all">All <span class="tag-count">4</span></button>
-          <button class="cloud-tag" data-filter="daily life">🌿 daily life <span class="tag-count">1</span></button>
-          <button class="cloud-tag" data-filter="tech">💻 tech <span class="tag-count">1</span></button>
-          <button class="cloud-tag" data-filter="books">📚 books <span class="tag-count">1</span></button>
-          <button class="cloud-tag" data-filter="writing">✍️ writing <span class="tag-count">1</span></button>
+          <button class="cloud-tag active" data-filter="all"><span data-i18n="filter-all">All</span> <span class="tag-count">4</span></button>
+          <button class="cloud-tag" data-filter="daily life"><span data-i18n="tag-daily">🌿 daily life</span> <span class="tag-count">1</span></button>
+          <button class="cloud-tag" data-filter="tech"><span data-i18n="tag-tech">💻 tech</span> <span class="tag-count">1</span></button>
+          <button class="cloud-tag" data-filter="books"><span data-i18n="tag-books">📚 books</span> <span class="tag-count">1</span></button>
+          <button class="cloud-tag" data-filter="writing"><span data-i18n="tag-writing">✍️ writing</span> <span class="tag-count">1</span></button>
         </div>
       </div>
 
       <!-- RECENT POSTS -->
       <div class="sidebar-widget">
-        <h3 class="widget-title">📌 Recent Posts</h3>
+        <h3 class="widget-title" data-i18n="widget-recent">📌 Recent Posts</h3>
         <ul class="recent-posts">
           <li>
             <a href="posts/2026-03-20-spring.html">
-              <span class="recent-tag">daily life</span>
-              <span class="recent-title">Spring is here — and so is the urge to start over</span>
+              <span class="recent-tag" data-i18n="tag-daily-short">daily life</span>
+              <span class="recent-title" data-i18n="recent1">Spring is here — and so is the urge to start over</span>
               <span class="recent-date">Mar 20</span>
             </a>
           </li>
           <li>
             <a href="posts/2026-03-10-github-pages.html">
-              <span class="recent-tag">tech</span>
-              <span class="recent-title">What I learned building my first GitHub Pages site</span>
+              <span class="recent-tag" data-i18n="tag-tech-short">tech</span>
+              <span class="recent-title" data-i18n="recent2">What I learned building my first GitHub Pages site</span>
               <span class="recent-date">Mar 10</span>
             </a>
           </li>
           <li>
             <a href="posts/2026-02-28-books-and-time.html">
-              <span class="recent-tag">books</span>
-              <span class="recent-title">Five books that changed how I think about time</span>
+              <span class="recent-tag" data-i18n="tag-books-short">books</span>
+              <span class="recent-title" data-i18n="recent3">Five books that changed how I think about time</span>
               <span class="recent-date">Feb 28</span>
             </a>
           </li>
           <li>
             <a href="posts/2026-02-14-writing-in-public.html">
-              <span class="recent-tag">writing</span>
-              <span class="recent-title">Why I started writing in public</span>
+              <span class="recent-tag" data-i18n="tag-writing-short">writing</span>
+              <span class="recent-title" data-i18n="recent4">Why I started writing in public</span>
               <span class="recent-date">Feb 14</span>
             </a>
           </li>
@@ -187,19 +196,19 @@
 
       <!-- STATS -->
       <div class="sidebar-widget widget-stats">
-        <h3 class="widget-title">✨ Stats</h3>
+        <h3 class="widget-title" data-i18n="widget-stats">✨ Stats</h3>
         <div class="stats-grid">
           <div class="stat-item">
             <span class="stat-num">4</span>
-            <span class="stat-label">Posts</span>
+            <span class="stat-label" data-i18n="stat-posts">Posts</span>
           </div>
           <div class="stat-item">
             <span class="stat-num">4</span>
-            <span class="stat-label">Tags</span>
+            <span class="stat-label" data-i18n="stat-tags">Tags</span>
           </div>
           <div class="stat-item">
             <span class="stat-num">2026</span>
-            <span class="stat-label">Since</span>
+            <span class="stat-label" data-i18n="stat-since">Since</span>
           </div>
         </div>
       </div>
@@ -210,25 +219,168 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>Made with care by <a href="https://github.com/yuna-s">Yuna Nishikino</a> · <a href="https://github.com/yuna-s/yuna-s.github.io">View source</a></p>
+    <p><span data-i18n="footer-made">Made with care by</span> <a href="https://github.com/yuna-s">Yuna Nishikino</a> · <a href="https://github.com/yuna-s/yuna-s.github.io" data-i18n="footer-source">View source</a></p>
   </footer>
 
   <script>
-    // ── State ──
+    // ── Translations ──
+    const i18n = {
+      en: {
+        'nav-about':       'About',
+        'nav-blog':        'Blog',
+        'hero-tagline':    'Writing about things I love, things I learn, and moments that matter.',
+        'about-title':     '🌷 About me',
+        'about-p1':        'Hi, I\'m <strong>Yuna</strong> — Software Engineer at <strong>Microsoft Japan</strong>, currently co-developing AI products with enterprise partners. I love bridging the gaps between technical depth, security, and human-centered UX. 🚀',
+        'about-p2':        'Outside of work, I write here about things I\'m learning, reading, and thinking about. No strict schedule — just honest writing when I have something to say. ☕',
+        'blog-title':      '📖 Blog',
+        'filter-all':      'All',
+        'filter-daily':    '🌿 daily life',
+        'filter-tech':     '💻 tech',
+        'filter-books':    '📚 books',
+        'filter-writing':  '✍️ writing',
+        'tag-daily':       '🌿 daily life',
+        'tag-tech':        '💻 tech',
+        'tag-books':       '📚 books',
+        'tag-writing':     '✍️ writing',
+        'tag-daily-short': 'daily life',
+        'tag-tech-short':  'tech',
+        'tag-books-short': 'books',
+        'tag-writing-short':'writing',
+        'search-placeholder': 'Search posts...',
+        'widget-search':   '🔍 Search',
+        'widget-tags':     '🏷️ Tags',
+        'widget-recent':   '📌 Recent Posts',
+        'widget-stats':    '✨ Stats',
+        'stat-posts':      'Posts',
+        'stat-tags':       'Tags',
+        'stat-since':      'Since',
+        'footer-made':     'Made with care by',
+        'footer-source':   'View source',
+        'date1': 'March 20, 2026',
+        'date2': 'March 10, 2026',
+        'date3': 'February 28, 2026',
+        'date4': 'February 14, 2026',
+        'post1-title':    'Spring is here — and so is the urge to start over',
+        'post1-excerpt':  "Cherry blossoms always remind me that beginnings don't need to be big. Sometimes a new season is enough.",
+        'post2-title':    'What I learned building my first GitHub Pages site',
+        'post2-excerpt':  "Turns out putting something on the internet is both easier and scarier than I expected. Here's how it went.",
+        'post3-title':    'Five books that changed how I think about time',
+        'post3-excerpt':  'Not productivity books. Not self-help. Just five stories that quietly shifted something in me.',
+        'post4-title':    "Why I started writing in public (and why I almost didn't)",
+        'post4-excerpt':  'The voice in my head that said "no one will care" was loud. I wrote anyway. This is about that.',
+        'read-more':      'Read more →',
+        'recent1': 'Spring is here — and so is the urge to start over',
+        'recent2': 'What I learned building my first GitHub Pages site',
+        'recent3': 'Five books that changed how I think about time',
+        'recent4': 'Why I started writing in public',
+        'no-results': 'No posts found. Try a different tag or search term.',
+      },
+      ja: {
+        'nav-about':       'About',
+        'nav-blog':        'ブログ',
+        'hero-tagline':    '好きなこと、学んだこと、大切な瞬間を書いています。',
+        'about-title':     '🌷 自己紹介',
+        'about-p1':        'こんにちは、<strong>Yuna</strong> です！<strong>日本マイクロソフト</strong>のソフトウェアエンジニアとして、複数の企業と共同でAI製品の開発をしています。技術・セキュリティ・AIと人間中心のUXを橋渡しすることが得意です 🚀',
+        'about-p2':        '仕事以外では、学んでいること・読んでいること・考えていることをここに書いています。決まったスケジュールはなく、書きたいことができたときに書く、そんなブログです。☕',
+        'blog-title':      '📖 ブログ',
+        'filter-all':      'すべて',
+        'filter-daily':    '🌿 日常',
+        'filter-tech':     '💻 テック',
+        'filter-books':    '📚 本',
+        'filter-writing':  '✍️ ライティング',
+        'tag-daily':       '🌿 日常',
+        'tag-tech':        '💻 テック',
+        'tag-books':       '📚 本',
+        'tag-writing':     '✍️ ライティング',
+        'tag-daily-short': '日常',
+        'tag-tech-short':  'テック',
+        'tag-books-short': '本',
+        'tag-writing-short':'ライティング',
+        'search-placeholder': '記事を検索...',
+        'widget-search':   '🔍 検索',
+        'widget-tags':     '🏷️ タグ',
+        'widget-recent':   '📌 最近の投稿',
+        'widget-stats':    '✨ 統計',
+        'stat-posts':      '記事',
+        'stat-tags':       'タグ',
+        'stat-since':      '開設',
+        'footer-made':     'Made with care by',
+        'footer-source':   'ソースを見る',
+        'date1': '2026年3月20日',
+        'date2': '2026年3月10日',
+        'date3': '2026年2月28日',
+        'date4': '2026年2月14日',
+        'post1-title':    '春がきた — そして、またやり直したくなる季節',
+        'post1-excerpt':  '桜を見るたびに思う。始まりは大げさじゃなくていい。季節が変わるだけで、十分なのかもしれない。',
+        'post2-title':    'GitHub Pagesで初めてサイトを作って学んだこと',
+        'post2-excerpt':  'インターネットに何かを公開するのは、思ったより簡単で、思ったより怖かった。その話。',
+        'post3-title':    '時間の捉え方が変わった5冊の本',
+        'post3-excerpt':  '生産性の本でも自己啓発書でもない。ただ、静かに何かを変えてくれた5つの物語。',
+        'post4-title':    '公開して書き始めた理由（と、危うくやめそうだった理由）',
+        'post4-excerpt':  '「誰も読まないよ」という声は大きかった。それでも書いた。これはその話。',
+        'read-more':      '続きを読む →',
+        'recent1': '春がきた — そして、またやり直したくなる季節',
+        'recent2': 'GitHub Pagesで初めてサイトを作って学んだこと',
+        'recent3': '時間の捉え方が変わった5冊の本',
+        'recent4': '公開して書き始めた理由',
+        'no-results': '記事が見つかりませんでした。別のタグや検索ワードをお試しください。',
+      }
+    };
+
+    // ── Language ──
+    let currentLang = localStorage.getItem('lang') || 'en';
+
+    function applyLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
+
+      const t = i18n[lang];
+
+      // text content
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+
+      // innerHTML (for elements with <strong> etc.)
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.dataset.i18nHtml;
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+
+      // placeholder
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.dataset.i18nPlaceholder;
+        if (t[key] !== undefined) el.placeholder = t[key];
+      });
+
+      // highlight active lang button
+      document.querySelectorAll('.lang-option').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    // lang toggle click
+    document.getElementById('lang-toggle').addEventListener('click', e => {
+      const btn = e.target.closest('[data-lang]');
+      if (btn) applyLang(btn.dataset.lang);
+    });
+
+    // ── Filter & Search state ──
     let activeTag = 'all';
     let searchQuery = '';
 
-    const cards     = Array.from(document.querySelectorAll('.post-card'));
-    const filterBtns  = document.querySelectorAll('.filter-btn');
-    const cloudBtns   = document.querySelectorAll('.cloud-tag');
+    const cards      = Array.from(document.querySelectorAll('.post-card'));
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cloudBtns  = document.querySelectorAll('.cloud-tag');
     const searchInput = document.getElementById('search-input');
     const noResults   = document.querySelector('.no-results');
 
-    // ── Filter logic ──
     function applyFilters() {
       let visible = 0;
       cards.forEach(card => {
-        const tags  = card.dataset.tags || '';
+        const tags    = card.dataset.tags || '';
         const title   = card.querySelector('.post-title').textContent.toLowerCase();
         const excerpt = card.querySelector('.post-excerpt').textContent.toLowerCase();
         const content = (card.dataset.content || '').toLowerCase();
@@ -244,51 +396,41 @@
       noResults.hidden = visible > 0;
     }
 
-    // ── Sync both sets of tag buttons ──
+    function syncHeroTags(tag) {
+      document.querySelectorAll('.tag-link').forEach(t => t.classList.toggle('active', t.dataset.filter === tag));
+    }
+
     function setTag(tag) {
       activeTag = tag;
-
       filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === tag));
       cloudBtns.forEach(b  => b.classList.toggle('active', b.dataset.filter === tag));
       syncHeroTags(tag);
-
-      // Update URL without reload (fails silently on file://)
       try {
         const url = new URL(window.location);
         if (tag === 'all') url.searchParams.delete('tag');
         else url.searchParams.set('tag', tag);
         history.replaceState(null, '', url);
       } catch (_) {}
-
       applyFilters();
     }
 
-    // ── Hero tag links ──
-    const heroTags = document.querySelectorAll('.tag-link');
-    function syncHeroTags(tag) {
-      heroTags.forEach(t => t.classList.toggle('active', t.dataset.filter === tag));
-    }
-
-    heroTags.forEach(a => a.addEventListener('click', e => {
+    document.querySelectorAll('.tag-link').forEach(a => a.addEventListener('click', e => {
       e.preventDefault();
       setTag(a.dataset.filter);
       document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
     }));
 
-    // ── Button listeners ──
     filterBtns.forEach(btn => btn.addEventListener('click', () => setTag(btn.dataset.filter)));
-    cloudBtns.forEach(btn  => btn.addEventListener('click', () => {
+    cloudBtns.forEach(btn => btn.addEventListener('click', () => {
       setTag(btn.dataset.filter);
       document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
     }));
 
-    // ── Search listener ──
     searchInput.addEventListener('input', e => {
       searchQuery = e.target.value;
       applyFilters();
     });
 
-    // ── Tag links on post cards (stop nav, apply filter) ──
     document.querySelectorAll('.post-tag[data-tag]').forEach(span => {
       span.style.cursor = 'pointer';
       span.addEventListener('click', e => {
@@ -299,7 +441,8 @@
       });
     });
 
-    // ── Read ?tag= from URL on load ──
+    // ── Init ──
+    applyLang(currentLang);
     const urlTag = new URLSearchParams(window.location.search).get('tag');
     if (urlTag) setTag(urlTag);
   </script>

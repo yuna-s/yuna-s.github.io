@@ -64,6 +64,39 @@ nav {
 
 .nav-links a:hover { color: var(--rose); }
 
+/* ── LANG TOGGLE ── */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+  transition: border-color 0.2s;
+}
+
+.lang-toggle:hover { border-color: var(--rose-light); }
+
+.lang-sep { color: var(--border); }
+
+.lang-option {
+  padding: 0.1rem 0.25rem;
+  border-radius: 4px;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.lang-option.active {
+  color: var(--rose);
+  background: var(--peach);
+}
+
 /* ── HERO ── */
 .hero {
   max-width: 720px;
