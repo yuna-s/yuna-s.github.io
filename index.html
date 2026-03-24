@@ -81,7 +81,7 @@
         <!-- BLOG GRID -->
         <div class="blog-grid">
 
-          <a class="post-card" href="posts/2026-03-20-spring.html" data-tags="daily life">
+          <a class="post-card" href="posts/2026-03-20-spring.html" data-tags="daily life" data-content="cherry blossoms spring season reset fresh start annual notebook warm light sakura beginning ordinary tuesday walk">
             <div class="post-meta">
               <span class="post-date">March 20, 2026</span>
               <span class="post-tag" data-tag="daily life">🌿 daily life</span>
@@ -91,7 +91,7 @@
             <div class="post-read">Read more →</div>
           </a>
 
-          <a class="post-card" href="posts/2026-03-10-github-pages.html" data-tags="tech">
+          <a class="post-card" href="posts/2026-03-10-github-pages.html" data-tags="tech" data-content="github pages html files push repo deploy static site index publish internet scary button commit simple files">
             <div class="post-meta">
               <span class="post-date">March 10, 2026</span>
               <span class="post-tag" data-tag="tech">💻 tech</span>
@@ -101,7 +101,7 @@
             <div class="post-read">Read more →</div>
           </a>
 
-          <a class="post-card" href="posts/2026-02-28-books-and-time.html" data-tags="books">
+          <a class="post-card" href="posts/2026-02-28-books-and-time.html" data-tags="books" data-content="remains of the day ishiguro when breath becomes air kalanithi midnight library matt haig piranesi susanna clarke man called ove fredrik backman time meaningful regret calendar">
             <div class="post-meta">
               <span class="post-date">February 28, 2026</span>
               <span class="post-tag" data-tag="books">📚 books</span>
@@ -111,7 +111,7 @@
             <div class="post-read">Read more →</div>
           </a>
 
-          <a class="post-card" href="posts/2026-02-14-writing-in-public.html" data-tags="writing">
+          <a class="post-card" href="posts/2026-02-14-writing-in-public.html" data-tags="writing" data-content="journal private public blog honest expert voice no one cares ordinary person real less alone publish domain scary share">
             <div class="post-meta">
               <span class="post-date">February 14, 2026</span>
               <span class="post-tag" data-tag="writing">✍️ writing</span>
@@ -229,12 +229,13 @@
       let visible = 0;
       cards.forEach(card => {
         const tags  = card.dataset.tags || '';
-        const title = card.querySelector('.post-title').textContent.toLowerCase();
+        const title   = card.querySelector('.post-title').textContent.toLowerCase();
         const excerpt = card.querySelector('.post-excerpt').textContent.toLowerCase();
+        const content = (card.dataset.content || '').toLowerCase();
         const q = searchQuery.toLowerCase();
 
         const tagMatch  = activeTag === 'all' || tags.split(',').map(t => t.trim()).includes(activeTag);
-        const textMatch = q === '' || title.includes(q) || excerpt.includes(q);
+        const textMatch = q === '' || title.includes(q) || excerpt.includes(q) || content.includes(q);
 
         const show = tagMatch && textMatch;
         card.style.display = show ? '' : 'none';
