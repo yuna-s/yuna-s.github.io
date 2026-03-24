@@ -14,54 +14,101 @@
   <nav>
     <a class="nav-logo" href="../index.html">yuna ✿</a>
     <ul class="nav-links">
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#blog">Blog</a></li>
+      <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-ja">About</span></a></li>
+      <li><a href="../index.html#blog"><span class="lang-en">Blog</span><span class="lang-ja">ブログ</span></a></li>
     </ul>
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+      <span class="lang-option" data-lang="en">EN</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-option" data-lang="ja">JA</span>
+    </button>
   </nav>
 
   <main class="post-page">
     <article>
       <header class="post-header">
         <div class="post-meta">
-          <span class="post-date">March 10, 2026</span>
-          <a class="post-tag" href="../index.html?tag=tech">💻 tech</a>
+          <span class="post-date">
+            <span class="lang-en">March 10, 2026</span>
+            <span class="lang-ja">2026年3月10日</span>
+          </span>
+          <a class="post-tag" href="../index.html?tag=tech">
+            <span class="lang-en">💻 tech</span>
+            <span class="lang-ja">💻 テック</span>
+          </a>
         </div>
-        <h1>What I learned building my first GitHub Pages site</h1>
-        <p class="post-lead">Turns out putting something on the internet is both easier and scarier than I expected. Here's how it went.</p>
+        <h1>
+          <span class="lang-en">What I learned building my first GitHub Pages site</span>
+          <span class="lang-ja">GitHub Pagesで初めてサイトを作って学んだこと</span>
+        </h1>
+        <p class="post-lead">
+          <span class="lang-en">Turns out putting something on the internet is both easier and scarier than I expected. Here's how it went.</span>
+          <span class="lang-ja">インターネットに何かを公開するのは、思ったより簡単で、思ったより怖かった。その話。</span>
+        </p>
       </header>
 
       <div class="post-body">
-        <p>I've had a GitHub account for a while, but I'd never actually published anything with it. The repos were all private, half-finished projects I was too embarrassed to share. So when I decided to make a personal site, GitHub Pages felt like the right push.</p>
 
-        <h2>It's just files</h2>
+        <!-- EN -->
+        <div class="lang-en">
+          <p>I've had a GitHub account for a while, but I'd never actually published anything with it. The repos were all private, half-finished projects I was too embarrassed to share. So when I decided to make a personal site, GitHub Pages felt like the right push.</p>
 
-        <p>The thing that surprised me most: it really is just files. One <code>index.html</code>, pushed to a repo named <code>username.github.io</code>, and suddenly you have a website. No backend, no server costs, no setup beyond what you already know.</p>
+          <h2>It's just files</h2>
+          <p>The thing that surprised me most: it really is just files. One <code>index.html</code>, pushed to a repo named <code>username.github.io</code>, and suddenly you have a website. No backend, no server costs, no setup beyond what you already know.</p>
+          <p>That simplicity is both freeing and a little overwhelming. There's no framework telling you what to do. You make the choices.</p>
 
-        <p>That simplicity is both freeing and a little overwhelming. There's no framework telling you what to do. You make the choices.</p>
+          <h2>The scary part</h2>
+          <p>The scary part isn't the tech. The scary part is that once it's live, anyone can see it. That's the whole point, but it's also terrifying in a way that a private repo never is.</p>
 
-        <h2>The scary part</h2>
+          <blockquote>Publishing is a different kind of finishing. It says: this is real, this counts, I made this.</blockquote>
 
-        <p>The scary part isn't the tech. The scary part is that once it's live, anyone can see it. That's the whole point, but it's also terrifying in a way that a private repo never is.</p>
+          <p>I stared at the "push" button for longer than I'd like to admit.</p>
 
-        <blockquote>Publishing is a different kind of finishing. It says: this is real, this counts, I made this.</blockquote>
+          <h2>What I'd tell myself before starting</h2>
+          <ul>
+            <li>Keep it simple. One HTML file is enough to start.</li>
+            <li>Separate your CSS early — it's much easier to manage.</li>
+            <li>Don't wait until it's perfect. It never will be.</li>
+            <li>The best time to publish was yesterday. The second best time is now.</li>
+          </ul>
 
-        <p>I stared at the "push" button for longer than I'd like to admit.</p>
+          <p>The site you're reading right now is the result of that push. It's not finished. It might never be finished. But it's here, and that feels good.</p>
+        </div>
 
-        <h2>What I'd tell myself before starting</h2>
+        <!-- JA -->
+        <div class="lang-ja">
+          <p>GitHubアカウントはずっと持っていたけど、実際に何かを公開したことはなかった。リポジトリはどれもプライベートで、恥ずかしくて人に見せられない、途中で止まったものばかり。だから個人サイトを作ることにしたとき、GitHub Pagesがちょうどいいきっかけになった。</p>
 
-        <ul>
-          <li>Keep it simple. One HTML file is enough to start.</li>
-          <li>Separate your CSS early — it's much easier to manage.</li>
-          <li>Don't wait until it's perfect. It never will be.</li>
-          <li>The best time to publish was yesterday. The second best time is now.</li>
-        </ul>
+          <h2>ただのファイル</h2>
+          <p>一番驚いたのは、本当にただのファイルだということ。<code>index.html</code> を1つ、<code>username.github.io</code> という名前のリポジトリにpushするだけで、ウェブサイトができあがる。バックエンドも、サーバー代も、難しいセットアップも何もない。</p>
+          <p>そのシンプルさが、自由でもあり、少し戸惑いでもあった。何をするか教えてくれるフレームワークがない。全部自分で決める。</p>
 
-        <p>The site you're reading right now is the result of that push. It's not finished. It might never be finished. But it's here, and that feels good.</p>
+          <h2>怖い部分</h2>
+          <p>怖いのは技術じゃない。公開したら誰でも見られる、というのが怖い。それがそもそもの目的なんだけど、プライベートリポジトリとは全然違う怖さがある。</p>
+
+          <blockquote>公開するのは、別の種類の「完成」だ。これは本物で、これは意味があって、私が作った——そう言うことだと思う。</blockquote>
+
+          <p>「push」ボタンを、恥ずかしいくらいの時間じっと見つめた。</p>
+
+          <h2>始める前の自分へ伝えたいこと</h2>
+          <ul>
+            <li>シンプルにする。HTMLファイル1つで始めれば十分。</li>
+            <li>CSSは早めに分けておく — 後から管理がずっと楽になる。</li>
+            <li>完璧になるまで待たない。完璧にはならないから。</li>
+            <li>公開するベストタイミングは昨日。次のベストは今。</li>
+          </ul>
+
+          <p>あなたが読んでいるこのサイトが、あのpushの結果。完成していない。もしかしたら永遠に完成しないかもしれない。でも存在している。それだけで、十分いい感じ。</p>
+        </div>
+
       </div>
     </article>
 
     <footer class="post-footer">
-      <a class="back-link" href="../index.html">← Back to all posts</a>
+      <a class="back-link" href="../index.html">
+        <span class="lang-en">← Back to all posts</span>
+        <span class="lang-ja">← 記事一覧に戻る</span>
+      </a>
     </footer>
   </main>
 
@@ -69,5 +116,6 @@
     <p>Made with care by <a href="https://github.com/yuna-s">Yuna Nishikino</a></p>
   </footer>
 
+  <script src="../js/post.js"></script>
 </body>
 </html>

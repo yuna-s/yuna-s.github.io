@@ -14,45 +14,84 @@
   <nav>
     <a class="nav-logo" href="../index.html">yuna ✿</a>
     <ul class="nav-links">
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#blog">Blog</a></li>
+      <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-ja">About</span></a></li>
+      <li><a href="../index.html#blog"><span class="lang-en">Blog</span><span class="lang-ja">ブログ</span></a></li>
     </ul>
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+      <span class="lang-option" data-lang="en">EN</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-option" data-lang="ja">JA</span>
+    </button>
   </nav>
 
   <main class="post-page">
     <article>
       <header class="post-header">
         <div class="post-meta">
-          <span class="post-date">MONTH DAY, YEAR</span>
-          <!-- Tags: daily life / tech / books / writing -->
-          <a class="post-tag" href="../index.html?tag=TAG">TAG</a>
+          <span class="post-date">
+            <span class="lang-en">Month DD, YYYY</span>
+            <span class="lang-ja">YYYY年M月D日</span>
+          </span>
+          <!-- tag href: daily+life / tech / books / writing -->
+          <a class="post-tag" href="../index.html?tag=TAG">
+            <span class="lang-en">🌿 TAG (EN)</span>
+            <span class="lang-ja">🌿 TAG (JA)</span>
+          </a>
         </div>
-        <h1>POST TITLE</h1>
-        <p class="post-lead">A short lead sentence that summarizes or hooks the reader.</p>
+        <h1>
+          <span class="lang-en">English title</span>
+          <span class="lang-ja">日本語タイトル</span>
+        </h1>
+        <p class="post-lead">
+          <span class="lang-en">English lead sentence.</span>
+          <span class="lang-ja">日本語のリード文。</span>
+        </p>
       </header>
 
       <div class="post-body">
-        <p>First paragraph...</p>
 
-        <h2>Section heading</h2>
+        <!-- EN -->
+        <div class="lang-en">
+          <p>First paragraph...</p>
 
-        <p>More content...</p>
+          <h2>Section heading</h2>
+          <p>Content...</p>
 
-        <blockquote>A quote or highlight if you have one.</blockquote>
+          <blockquote>A quote or highlight.</blockquote>
 
-        <ul>
-          <li>List item</li>
-          <li>List item</li>
-        </ul>
+          <ul>
+            <li>List item</li>
+          </ul>
 
-        <hr />
+          <hr />
+          <p>Closing thought.</p>
+        </div>
 
-        <p>Closing thought.</p>
+        <!-- JA -->
+        <div class="lang-ja">
+          <p>最初のパラグラフ...</p>
+
+          <h2>セクション見出し</h2>
+          <p>内容...</p>
+
+          <blockquote>引用や強調したいこと。</blockquote>
+
+          <ul>
+            <li>リスト項目</li>
+          </ul>
+
+          <hr />
+          <p>締めの言葉。</p>
+        </div>
+
       </div>
     </article>
 
     <footer class="post-footer">
-      <a class="back-link" href="../index.html">← Back to all posts</a>
+      <a class="back-link" href="../index.html">
+        <span class="lang-en">← Back to all posts</span>
+        <span class="lang-ja">← 記事一覧に戻る</span>
+      </a>
     </footer>
   </main>
 
@@ -60,5 +99,6 @@
     <p>Made with care by <a href="https://github.com/yuna-s">Yuna Nishikino</a></p>
   </footer>
 
+  <script src="../js/post.js"></script>
 </body>
 </html>
