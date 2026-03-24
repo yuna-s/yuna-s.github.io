@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claudeと一緒にこのブログを作った話 — Yuna Nishikino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">yuna ✿</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-ja">About</span></a></li>
+      <li><a href="../index.html#blog"><span class="lang-en">Blog</span><span class="lang-ja">ブログ</span></a></li>
+    </ul>
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+      <span class="lang-option" data-lang="en">EN</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-option" data-lang="ja">JA</span>
+    </button>
+  </nav>
+
+  <main class="post-page">
+    <article>
+      <header class="post-header">
+        <div class="post-meta">
+          <span class="post-date">
+            <span class="lang-en">March 24, 2026</span>
+            <span class="lang-ja">2026年3月24日</span>
+          </span>
+          <a class="post-tag" href="../index.html?tag=tech">
+            <span class="lang-en">💻 tech</span>
+            <span class="lang-ja">💻 テック</span>
+          </a>
+        </div>
+        <h1>
+          <span class="lang-en"><!-- EN title coming soon --></span>
+          <span class="lang-ja">Claudeと一緒にこのブログを作った話</span>
+        </h1>
+        <p class="post-lead">
+          <span class="lang-en"><!-- EN lead coming soon --></span>
+          <span class="lang-ja">Claude を試してみたくて、自分のブログ作成をお題にしてみました。約1時間で完成してしまったので、使ったプロンプトと実装した機能をまとめておきます。</span>
+        </p>
+      </header>
+
+      <div class="post-body">
+
+        <!-- EN -->
+        <div class="lang-en">
+          <p><em>English version coming soon.</em></p>
+        </div>
+
+        <!-- JA -->
+        <div class="lang-ja">
+
+          <h2>はじめに</h2>
+          <p>Anthropic が提供する AI コーディングアシスタント「<strong>Claude Code</strong>」を試してみたくて、以前からやりたかった「自分のブログ用ホームページを作る」をお題にしてみることにしました。</p>
+          <p>この記事では、実際に使ったプロンプトと完成した機能を記録しています。技術的な経験がある方にも、AI に興味はあるけど詳しくない方にも、参考にしていただければ幸いです。</p>
+
+          <h2>完成したもの</h2>
+          <p>約1時間の会話で、このサイト（<a href="https://yuna-s.github.io" target="_blank">yuna-s.github.io</a>）が完成しました。主な機能は以下のとおりです。</p>
+          <ul>
+            <li>GitHub Pages（無料でウェブサイトを公開できる GitHub のサービス）でホスティングされる静的ブログ</li>
+            <li>タグによる記事フィルタリング（ページ上部・フィルターボタン・サイドバーが連動）</li>
+            <li>タイトル・抜粋・本文キーワードを対象にしたリアルタイム検索</li>
+            <li>英語 / 日本語の切り替え（選択した言語はブラウザに記憶される）</li>
+            <li>サイドバー：検索・タグ一覧・最近の投稿・記事数などの統計</li>
+            <li>Claude との作業ルールやナレッジをまとめたドキュメント</li>
+          </ul>
+          <p>コードは <code>css/</code>・<code>posts/</code>・<code>js/</code> に整理されており、新しい記事は HTML ファイルを1つ追加するだけで公開できます。</p>
+
+          <h2>使ったプロンプト（コピペ用）</h2>
+          <p>指示はすべて会話形式で、英語・日本語どちらでも構いません。最初の一言はとてもシンプルでした。</p>
+          <blockquote>create my homepage which is hosting on github</blockquote>
+          <p>その後、名前・用途・スタイルをあわせて伝えました。</p>
+          <blockquote>my name is yuna nishikino. blog page. About me and blogs, user name is yuna-s, style is warm and cute but clear</blockquote>
+          <p>以降は会話しながら機能を追加していきました。主なリクエストは以下のとおりです。</p>
+          <ul>
+            <li><code>フォルダーを作成してpushして</code> → ファイル構成の整理・GitHub への公開</li>
+            <li><code>タグでフィルタリングする機能を付けて。右にも便利な機能つけて</code> → タグフィルター＋サイドバー追加</li>
+            <li><code>英語と日本語対応にして</code> → 言語切り替え機能の実装</li>
+            <li><code>記事も日本語対応するようにして</code> → 記事ページのバイリンガル化</li>
+          </ul>
+
+          <h2>気づいたこと・つまずいた点</h2>
+
+          <h3>短い指示でも意図をくんでくれる</h3>
+          <p>「warm and cute but clear」というスタイル指定だけで、カラーパレットからフォント選定まで一貫したデザインが出てきました。細かい仕様を事前に決めなくても、方向性さえ伝えればある程度動いてくれます。</p>
+
+          <h3>不具合の特定・修正も自分でやってくれる</h3>
+          <p>最初、検索機能がうまく動いていませんでした。Claude Code がコードを解析して原因を特定し、修正まで行ってくれました。自分でエラーの原因を調べる必要がなかったのは、大変助かりました。</p>
+          <p><strong>技術的な補足：</strong>原因は、ファイルをブラウザで直接開く場合（<code>file://</code> プロトコル）に一部のブラウザ API が制限され、スクリプト全体が止まっていたことでした。<code>try-catch</code> を追加して対応しています。</p>
+
+          <h3>制約の中での工夫も一緒に考えてくれる</h3>
+          <p>サーバーを持たない静的サイトでは、記事本文の全文検索を実現するのが難しいという制約があります。今回は、各記事カードにキーワードをあらかじめ埋め込む（記事追加時に Claude と一緒に設定）という方法で対応しました。「できないから諦める」ではなく、現実的な落とし所を一緒に探してくれる点がとても良かったです。</p>
+
+          <h2>まとめ</h2>
+          <p>「AI に頼むと雑なものができる」という先入観がありましたが、デザインも機能も想像以上のものができました。約1時間の会話で、自分だけでは何日もかかりそうな作業が完了しました。</p>
+          <p>大がかりなツールや専門知識は不要です。やりたいことを言葉で伝えるだけで、かなりのところまで進められます。プログラマーでなくても、AI に興味がある方なら十分試せると思います。</p>
+          <p>次は、このブログで記事を書き続けながら、Claude と一緒にどこまで改善できるか試していきたいと思っています。同じことを試してみたい方は、ぜひやってみてください。誤りや補足があればお気軽にご連絡ください。🌸</p>
+        </div>
+
+      </div>
+    </article>
+
+    <footer class="post-footer">
+      <a class="back-link" href="../index.html">
+        <span class="lang-en">← Back to all posts</span>
+        <span class="lang-ja">← 記事一覧に戻る</span>
+      </a>
+    </footer>
+  </main>
+
+  <footer>
+    <p>Made with care by <a href="https://github.com/yuna-s">Yuna Nishikino</a></p>
+  </footer>
+
+  <script src="../js/post.js"></script>
+</body>
+</html>
